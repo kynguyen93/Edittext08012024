@@ -25,23 +25,18 @@ class MainActivity : AppCompatActivity() {
         edtInputMessage = findViewById(R.id.edit_text_message)
         txtMessage = findViewById(R.id.text_view_message)
 
-        handleData(this::callback)
+//        handleData(fun(String1) {
+//            Log.d("Nky", "Function ${this}" )
+//        }, "1")
+
+        handleData({string1 ->
+            Log.d("Nky", "Function ${this}" )
+        }, "1")
     }
-
-//    fun doSomething(a: Int, b: Int, callBack: (String) ->  Unit) {
-//        val total = a + b
-//        callBack(total.toString())
-//    }
-//
-//    fun printMessage (message: String) {
-//        println(message)
-//    }
-
-        fun handleData(callback: (String) -> Unit) {
-            var message = ""
+        fun handleData(callback: (String) -> Unit, text: String) {
             CoroutineScope(Dispatchers.IO).launch {
                 delay(1000)
-                message = "Success"
+                var message = "Success"
                 callback(message)
             }
         }
@@ -50,5 +45,6 @@ class MainActivity : AppCompatActivity() {
             Log.d("Nky", message)
         }
     }
+
 
 
