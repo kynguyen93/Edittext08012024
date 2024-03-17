@@ -2,15 +2,12 @@ package com.example.edittext08012024
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Message
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Delay
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -50,7 +47,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         fun callback(message: String): Unit {
-            Log.d("ky", message)
+            Log.d("Nky", message)
         }
     }
 
