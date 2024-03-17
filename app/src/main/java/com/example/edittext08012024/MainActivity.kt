@@ -3,6 +3,8 @@ package com.example.edittext08012024
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.view.View.OnClickListener
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -29,9 +31,19 @@ class MainActivity : AppCompatActivity() {
 //            Log.d("Nky", "Function ${this}" )
 //        }, "1")
 
-        handleData({string1 ->
-            Log.d("Nky", "Function ${this}" )
-        }, "1")
+//        handleData({string1 ->
+//            Log.d("Nky", "Function ${this}" )
+//        }, "1")
+
+        btnShowMessage.setOnClickListener(object : OnClickListener {
+            override fun onClick(p0: View?) {
+
+            }
+        })
+
+        btnShowMessage.setOnClickListener{
+
+        }
     }
         fun handleData(callback: (String) -> Unit, text: String) {
             CoroutineScope(Dispatchers.IO).launch {
