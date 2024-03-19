@@ -8,6 +8,7 @@ import android.view.View.OnClickListener
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -35,14 +36,22 @@ class MainActivity : AppCompatActivity() {
 //            Log.d("Nky", "Function ${this}" )
 //        }, "1")
 
-        btnShowMessage.setOnClickListener(object : OnClickListener {
-            override fun onClick(p0: View?) {
+//        btnShowMessage.setOnClickListener(object : OnClickListener {
+//            override fun onClick(p0: View?) {
+//
+//            }
+//        })
 
-            }
-        })
+        btnShowMessage.setOnClickListener {
+            // kiem tra gia tri trong logcat
+           //Log.d("Nky", "Button mesage click")
 
-        btnShowMessage.setOnClickListener{
+            // hien thi thong bao len man hinh
+            //Toast.makeText(this@MainActivity, "Click button", Toast.LENGTH_LONG).show()
 
+            // lay du lieu input
+            val inputMessage = edtInputMessage.toString()
+            Toast.makeText(this@MainActivity, inputMessage,Toast.LENGTH_LONG).show()
         }
     }
         fun handleData(callback: (String) -> Unit, text: String) {
